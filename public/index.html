@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Question Generator</title>
     <style>
-        #cubes{
+        .container{
             display: none;
+        }
+        #cubes{
+            display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin-top: 50px;
@@ -31,6 +34,7 @@
     <div id="question"></div>
     <div id="answer"></div>
 
+    <div class="container">
     <div id="cubes" >
         <div class="cube">A</div>
         <div class="cube">B</div>
@@ -57,10 +61,11 @@
         <div class="cube">W</div>
         <div class="cube">X</div>
         <div class="cube">Y</div>
-        <div class="cube">Z</div>
+        <div class="cube">Z</div>   
     </div>
     <div>SCORE : </div>
-
+    <div style="background-image: url('background.png'); height: 500px; width: 500px; background-repeat: no-repeat;"></div>
+    </div>
     <script>
         var ans="";
         document.getElementById("generate").addEventListener("click", function() {
@@ -71,7 +76,7 @@
                     ans=data.answer;
                     const answer = data.answer.replace(/[a-zA-Z]/g, '*');
                     document.getElementById("answer").innerHTML = answer;
-                    document.getElementById("cubes").style.display = "flex";
+                    document.querySelector(".container").style.display = "block";
                 })
                 .catch(error => console.error('Error:', error));
         });
