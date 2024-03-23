@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const path=require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,6 +13,11 @@ const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 // }
 
 app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 
 app.get('/random-question', (req, res) => {
     const randomIndex = Math.floor(Math.random() * questions.length);
