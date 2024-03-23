@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Question Generator</title>
+    <style>
+        #cubes{
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+            max-width: 500px;
+            
+        }
+        .cube {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            margin-bottom: 5px;
+            padding: 10px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Question Generator</h1>
+    <button id="generate">Generate Question</button>
+    <div id="question"></div>
+    <div id="answer"></div>
+
+    <div id="cubes" >
+        <div class="cube">A</div>
+        <div class="cube">B</div>
+        <div class="cube">C</div>
+        <div class="cube">D</div>
+        <div class="cube">E</div>
+        <div class="cube">F</div>
+        <div class="cube">G</div>
+        <div class="cube">H</div>
+        <div class="cube">I</div>
+        <div class="cube">J</div>
+        <div class="cube">K</div>
+        <div class="cube">L</div>
+        <div class="cube">M</div>
+        <div class="cube">N</div>
+        <div class="cube">O</div>
+        <div class="cube">P</div>
+        <div class="cube">Q</div>
+        <div class="cube">R</div>
+        <div class="cube">S</div>
+        <div class="cube">T</div>
+        <div class="cube">U</div>
+        <div class="cube">V</div>
+        <div class="cube">W</div>
+        <div class="cube">X</div>
+        <div class="cube">Y</div>
+        <div class="cube">Z</div>
+    </div>
+    <div>SCORE : </div>
+
+    <script>
+        var ans="";
+        document.getElementById("generate").addEventListener("click", function() {
+            fetch('/random-question')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("question").innerText = data.question;
+                    ans=data.answer;
+                    const answer = data.answer.replace(/[a-zA-Z]/g, '*');
+                    document.getElementById("answer").innerHTML = answer;
+                    document.getElementById("cubes").style.display = "flex";
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        const cubes = document.querySelectorAll(".cube");
+        cubes.forEach(cube => {
+            cube.addEventListener("click", function() {
+                console.log(cube.innerText);
+                const clickedAlphabet = cube.innerText;
+                let answer = document.getElementById("answer").innerHTML;
+                
+                const updatedAnswer = [];
+                for (let j = 0; j < answer.length; j++) {
+                    if (ans[j].toUpperCase() === clickedAlphabet ) {
+                        updatedAnswer.push(clickedAlphabet);
+                    } else {
+                        updatedAnswer.push(answer[j]);
+                    }
+                }
+                console.log(updatedAnswer.join(''));
+                document.getElementById("answer").innerText = updatedAnswer.join('');
+            });
+        });
+    </script>
+</body>
+</html>
