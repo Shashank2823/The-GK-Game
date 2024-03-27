@@ -69,7 +69,7 @@
     <script>
         var ans="";
         document.getElementById("generate").addEventListener("click", function() {
-            fetch('/random-question')
+            fetch('https://the-gk-game.vercel.app/random-question')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("question").innerText = data.question;
