@@ -63,11 +63,17 @@
         <div class="cube">Y</div>
         <div class="cube">Z</div>   
     </div>
-    <div>SCORE : </div>
-    <div style="background-image: url('/background.png'); height: 500px; width: 500px; background-repeat: no-repeat;"></div>
     </div>
+    <div id="score">SCORE : 0</div>
+    <div id="life">lIFE : 0</div>
+    <!-- <div style="background-image: url('/background.png'); height: 500px; width: 500px; background-repeat: no-repeat;"></div>
+    </div> -->
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
         var ans="";
+        var count=0;
+        var life=3;
+        var flag=0;
         document.getElementById("generate").addEventListener("click", function() {
             fetch('/random-question')
                 .then(response => response.json())
@@ -77,12 +83,14 @@
                     const answer = data.answer.replace(/[a-zA-Z]/g, '*');
                     document.getElementById("answer").innerHTML = answer;
                     document.querySelector(".container").style.display = "block";
+                    
                 })
                 .catch(error => console.error('Error abc:', error));
         });
 
         const cubes = document.querySelectorAll(".cube");
         cubes.forEach(cube => {
+            
             cube.addEventListener("click", function() {
                 console.log(cube.innerText);
                 const clickedAlphabet = cube.innerText;
@@ -92,14 +100,26 @@
                 for (let j = 0; j < answer.length; j++) {
                     if (ans[j].toUpperCase() === clickedAlphabet ) {
                         updatedAnswer.push(clickedAlphabet);
+                        flag=1;
                     } else {
                         updatedAnswer.push(answer[j]);
+                        
                     }
                 }
                 console.log(updatedAnswer.join(''));
                 document.getElementById("answer").innerText = updatedAnswer.join('');
+                if(flag!=1){
+                    life--;
+                }
+                document.getElementById("life").innerText = `LIFE : ${life}`;
+
+                if (updatedAnswer.length === ans.length && updatedAnswer.join('').toUpperCase() === ans.toUpperCase()) { // Check if answer is complete
+                    count++; 
+                    document.getElementById("score").innerText = `SCORE : ${count}`; // Update score display
+                }
             });
         });
+    });
     </script>
 </body>
 </html>
