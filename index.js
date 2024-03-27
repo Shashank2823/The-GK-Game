@@ -3,7 +3,6 @@ const fs = require('fs');
 const path=require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
@@ -32,6 +31,6 @@ app.get('/random-question', (req, res) => {
     res.json(questionWithBlankAnswer);
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+    console.log(`Server is running on port 3000`);
 });
