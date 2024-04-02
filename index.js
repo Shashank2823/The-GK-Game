@@ -6,8 +6,8 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, '/'))); // 
-app.use(express.static("./"))
+// app.use(express.static(path.join(__dirname, '/'))); // 
+// app.use(express.static("./"))
 const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
 // Create a function to replace characters in the answer with underscores
