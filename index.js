@@ -17,7 +17,11 @@ const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    fs.readFile(path.join(__dirname, "index.html"),"utf8",(err,data)=>{
+        if(err)console.log("Error fetching index.html",err);
+        else
+        res.send(data);
+    })
 });
 
 
