@@ -18,15 +18,27 @@ app.get('/', (req, res) => {
 
 
 app.get('/random-question', (req, res) => {
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    const randomQuestion = questions[randomIndex];
-    
-    const questionWithBlankAnswer = {
-        question: randomQuestion.question,
-        answer: randomQuestion.answer
-    };
+    fs.readFile(path.join(__dirname, 'question.json'), 'utf-8', (err, data) => {
+        if (err) {
+            console.error('Error reading question.json:', err);
+            res.status(500).json({ error: 'Internal Server Error' });
+            return;
+        }
 
-    res.json(questionWithBlankAnswer);
+        try {
+            const questions = JSON.parse(data);
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            const randomQuestion = questions[randomIndex];
+            const questionWithBlankAnswer = {
+                  question: randomQuestion.question,
+                  answer: randomQuestion.answer
+                };
+                res.json(questionWithBlankAnswer);
+        } catch (parseError) {
+            console.error('Error parsing question.json:', parseError);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }); 
 });
 
 app.listen(3000, () => {
