@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs');
 const path=require('path');
-const questions=require("/.question.json");
 const cors = require('cors');
 
 const app = express();
@@ -9,7 +8,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, '/'))); // 
 app.use(express.static("./"))
-//const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
+const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
 // Create a function to replace characters in the answer with underscores
 // function hideAnswer(answer) {
@@ -18,11 +17,7 @@ app.use(express.static("./"))
 
 
 app.get('/', (req, res) => {
-    fs.readFile(path.join(__dirname, "index.html"),"utf8",(err,data)=>{
-        if(err)console.log("Error fetching index.html",err);
-        else
-        res.send(data);
-    })
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 
