@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-const questions = require('./question.json');
+//const questions = require('./question.json');
 
 // app.use(express.static(path.join(__dirname, '/'))); // 
 // app.use(express.static("./"))
