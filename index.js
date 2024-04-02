@@ -2,13 +2,15 @@ const express = require('express');
 const fs = require('fs');
 const path=require('path');
 const cors = require('cors');
+const test = require("./question.json");
+
 
 const app = express();
 app.use(cors());
 
-const test = require('./question.json');
 
-app.use(express.static(path.join(__dirname, '/'))); // 
+app.use(express.static(path.join(__dirname, "/")));
+app.use(express.urlencoded({extended:'false'})); // 
 app.use(express.static("./"))
 //const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
@@ -41,8 +43,8 @@ app.get('/random-question', (req, res) => {
     }); 
 });
 
-app.get('/testing', (req, res) => {
-    const alldata=test
+app.get("/testing", (req, res) => {
+    const alldata=test;
     res.json(alldata);
 });
 
