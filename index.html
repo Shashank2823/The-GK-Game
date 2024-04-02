@@ -65,7 +65,7 @@
     </div>
     </div>
     <div id="score">SCORE : 0</div>
-    <div id="life">lIFE : 0</div>
+    <div id="life">LIFE : 3</div>
     <!-- <div style="background-image: url('/background.png'); height: 500px; width: 500px; background-repeat: no-repeat;"></div>
     </div> -->
     <script>
@@ -112,10 +112,11 @@
                     life--;
                 }
                 document.getElementById("life").innerText = `LIFE : ${life}`;
+                flag=0;
 
                 if (updatedAnswer.length === ans.length && updatedAnswer.join('').toUpperCase() === ans.toUpperCase()) { // Check if answer is complete
                     count++; 
-                    document.getElementById("score").innerText = `SCORE : ${count}`; // Update score display
+                    document.getElementById("score").innerText = `SCORE : ${count}`; 
                 }
             });
         });
