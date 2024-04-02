@@ -8,8 +8,8 @@ app.use(cors());
 
 //const questions = require('./question.json');
 
-// app.use(express.static(path.join(__dirname, '/'))); // 
-// app.use(express.static("./"))
+app.use(express.static(path.join(__dirname, '/'))); // 
+app.use(express.static("./"))
 //const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
 app.get('/', (req, res) => {
