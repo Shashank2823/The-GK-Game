@@ -2,16 +2,15 @@ const express = require('express');
 const fs = require('fs');
 const path=require('path');
 const cors = require('cors');
-const test = require("./question.json");
+const questions = require('./question.json');
 
 
 const app = express();
 app.use(cors());
 
-
 app.use(express.static(path.join(__dirname, "/")));
-app.use(express.urlencoded({extended:'false'})); // 
-app.use(express.static("./"))
+app.use(express.urlencoded({extended:'false'}));
+app.use(express.static("./"));  
 //const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
 app.get('/', (req, res) => {
@@ -20,32 +19,15 @@ app.get('/', (req, res) => {
 
 
 app.get('/random-question', (req, res) => {
-    fs.readFile(path.join(__dirname, 'question.json'), 'utf-8', (err, data) => {
-        if (err) {
-            console.error('Error reading question.json:', err);
-            res.status(500).json({ error: 'Internal Server Error' });
-            return;
-        }
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    const randomQuestion = questions[randomIndex];
+    
+    const questionWithBlankAnswer = {
+        question: randomQuestion.question,
+        answer: randomQuestion.answer
+    };
 
-        try {
-            const questions = JSON.parse(data);
-            const randomIndex = Math.floor(Math.random() * questions.length);
-            const randomQuestion = questions[randomIndex];
-            const questionWithBlankAnswer = {
-                  question: randomQuestion.question,
-                  answer: randomQuestion.answer
-                };
-                res.json(questionWithBlankAnswer);
-        } catch (parseError) {
-            console.error('Error parsing question.json:', parseError);
-            res.status(500).json({ error: 'Internal Server Error' });
-        }
-    }); 
-});
-
-app.get("/testing", (req, res) => {
-    const alldata=test;
-    res.json(alldata);
+    res.json(questionWithBlankAnswer);
 });
 
 app.listen(3000, () => {
