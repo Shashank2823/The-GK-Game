@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-//const questions = require('./question.json');
+const test = require('./question.json');
 
 app.use(express.static(path.join(__dirname, '/'))); // 
 app.use(express.static("./"))
@@ -39,6 +39,11 @@ app.get('/random-question', (req, res) => {
             res.status(500).json({ error: 'Internal Server Error' });
         }
     }); 
+});
+
+app.get('/testing', (req, res) => {
+    const alldata=test
+    res.json(alldata);
 });
 
 app.listen(3000, () => {
