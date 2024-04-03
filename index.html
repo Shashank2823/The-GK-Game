@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Question Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk:SHLN@61&family=Rubik+Scribble&display=swap" 
+    rel="stylesheet">
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
         .container{
             display: none;
         }
@@ -26,13 +34,54 @@
             line-height: 50px;
             color: white;
         }
+        .honk-titl {
+            font-family: "Honk", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "MORF" 15,
+                "SHLN" 61;
+        }
+        .bungee-spice-regular {
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 800;
+            font-size: large;
+            font-style: normal;
+        }
+        .rubik-scribble-regular {
+            font-family: "Rubik Scribble", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            
+        }
+        #title{
+            font-size: 100px;
+            margin-bottom: 10px;
+            margin-top: -10px;
+            text-align: center;
+        }
+        #answer{
+            font-size: 50px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            color: rgb(30, 137, 3);
+            text-align: center;
+        }
+        #question{
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
     </style>
 </head>
 <body>
-    <h1>Random Question Generator</h1>
+    <h1 class="honk-titl" id="title">The Quiz Mania</h1>
     <button id="generate">Generate Question</button>
-    <div id="question"></div>
-    <div id="answer"></div>
+    <div class="bungee-spice-regular"id="question"></div>
+    <div class="rubik-scribble-regular" id="answer"></div>
 
     <div class="container">
     <div id="cubes" >
