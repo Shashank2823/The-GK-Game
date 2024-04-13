@@ -10,6 +10,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "/")));
 app.use(express.urlencoded({extended:'false'}));
+app.use(express.static(path.join(__dirname, '.')));
 app.use(express.static("./"));  
 //const questions = JSON.parse(fs.readFileSync('question.json', 'utf-8'));
 
