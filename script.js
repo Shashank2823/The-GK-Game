@@ -94,6 +94,7 @@ var ans="";
 
                 function checkWinCondition() {
                     if (count == 2) {
+                        testConfetti();
                         document.getElementById("congratsModal").style.display = "block";
                     }
                 }
@@ -148,3 +149,24 @@ var ans="";
                         }
                     }, 3000);
                 }
+
+                function testConfetti() {
+                    confetti({
+                        particleCount: 500, // Good number of particles for full coverage
+                        spread: 500,        // Spread to cover more horizontal space
+                        origin: { y: 0, x: 0.5 }, // Origin at the top center of the screen
+                        angle: 90,          // Angle directed straight down
+                        startVelocity: 30,  // Moderate initial velocity
+                        decay: 0.9,         // Slower decay to keep confetti in the air longer
+                        gravity: 0.5,       // Reduced gravity for a slower fall
+                        drift: 0.5,         // Drift to simulate slight air movement
+                        ticks: 800,         // Longer duration before particles fade
+                        colors: ['#bb0000', '#ffffff', '#f1c40f', '#e91e63', '#3498db', '#4CAF50', '#FF9800'], 
+                        shapes: ['circle', 'square'], 
+                        scalar: 1.2,        // Slightly larger confetti pieces
+                        zIndex: 1000        // Ensuring confetti stays on top of other content
+                    });
+                }
+                
+                
+                
