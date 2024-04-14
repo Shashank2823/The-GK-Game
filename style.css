@@ -14,6 +14,7 @@ body{
     margin-left: 10%;
     margin-top: 100px;
 }
+
 #cubes{
     display: flex;
     flex-wrap: wrap;
@@ -80,8 +81,34 @@ body{
     margin-bottom: 20px;
     text-align: center;
 }
+.final{
+    font-family: 'Press Start 2P', cursive;
+    color: #f44336;
+    font-size: 50px;
+    text-align: center;
+}
+#playbutton{
+    display: none;
+    text-align: center;
+    justify-content: center;
+    margin: 10%;
+}
+#playbutton button{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Press Start 2P';
+}
 #generate{
-    display: block;  
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    margin:15%
 }
 #next{
     display: none;  
@@ -248,7 +275,7 @@ button {
 
 #loseModal .close:hover,
 .close:focus {
-    color: black;
+    color: rgb(29, 214, 48);
     text-decoration: none;
     cursor: pointer;
 }

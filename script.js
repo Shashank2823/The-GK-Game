@@ -54,7 +54,7 @@ var ans="";
                     document.getElementById("life").innerText = `LIFE : ${life}`;
                     showToast(`Oops! Wrong guess. Lives left: ${life}`, 'red', true);
                 }
-                if(life==1){
+                if(life==1 && flag!=1){
                     showToast(`Last chance!`, 'red', true);
                     document.getElementById("life").style.color = "red";
                 }
@@ -84,6 +84,7 @@ var ans="";
                 });
 
                 function resetGame() {
+                    document.getElementById("life").style.color = "green";
                     document.getElementById("score").innerText = "SCORE : 0";
                     document.getElementById("life").innerText = "LIFE : 3";
                     count = 0;
@@ -102,6 +103,9 @@ var ans="";
                     document.querySelector(".container").style.display = "none";
                     document.getElementById("question").style.display = "none";
                     document.getElementById("answer").style.display = "none";
+                    document.getElementById("final").style.display = "block";
+                    document.getElementById("final").innerText = `Your final score is : ${count}`;
+                    document.getElementById("playbutton").style.display = "flex";
                 }
 
                 function showLoseModal() {
@@ -115,11 +119,17 @@ var ans="";
                     document.querySelector(".container").style.display = "none";
                     document.getElementById("question").style.display = "none";
                     document.getElementById("answer").style.display = "none";
-
+                    document.getElementById("final").style.display = "block";
+                    document.getElementById("final").innerText = `Your final score is : ${count}`;
+                    document.getElementById("playbutton").style.display = "flex";
                 }
         
                 function playAgain(){
                     document.getElementById("loseModal").style.display = "none";
+                    document.getElementById("playbutton").style.display = "none";
+                    document.getElementById("final").style.display = "none";
+                    document.getElementById("question").style.display = "block";
+                    document.getElementById("answer").style.display = "block";
                     resetGame();
                 }
         
