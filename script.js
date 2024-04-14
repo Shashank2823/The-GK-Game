@@ -10,7 +10,7 @@ var ans="";
                     ans=data.answer;
                     const answer = data.answer.replace(/[a-zA-Z]/g, '*');
                     document.getElementById("answer").innerHTML = answer;
-                    document.querySelector(".container").style.display = "block";
+                    document.querySelector(".container").style.display = "flex";
                     document.getElementById("generate").style.display = "none";
                 })
                 .catch(error => console.error('Error abc:', error));
@@ -54,14 +54,13 @@ var ans="";
                     document.getElementById("life").innerText = `LIFE : ${life}`;
                     showToast(`Oops! Wrong guess. Lives left: ${life}`, 'red', true);
                 }
-                
+                if(life==1){
+                    showToast(`Last chance!`, 'red', true);
+                    document.getElementById("life").style.color = "red";
+                }
                 if(life==0){
                     document.getElementById("life").innerText = `LIFE : ${life}`;
-                    showToast("Game over! Wanna play again?");
-                    life=3;
-                    count=0;
-                    document.getElementById("score").innerText = `SCORE : ${count}`;
-                    document.getElementById("life").innerText = `LIFE : ${life}`;
+                    showLoseModal();
                 }
                 flag=0;
 
@@ -75,13 +74,15 @@ var ans="";
                         document.getElementById("next").style.display = "block";
                     }
                 }
-
+            });
+        });
+        
+        //MODAL
                 document.getElementById("playAgain").addEventListener("click", function() {
                     document.getElementById("congratsModal").style.display = "none";
                     resetGame();
                 });
 
-                //MODAL
                 function resetGame() {
                     document.getElementById("score").innerText = "SCORE : 0";
                     document.getElementById("life").innerText = "LIFE : 3";
@@ -95,8 +96,33 @@ var ans="";
                         document.getElementById("congratsModal").style.display = "block";
                     }
                 }
+                function closeWinModal() {
+                    var WinModal = document.getElementById('congratsModal');
+                    WinModal.style.display = 'none';
+                    document.querySelector(".container").style.display = "none";
+                    document.getElementById("question").style.display = "none";
+                    document.getElementById("answer").style.display = "none";
+                }
 
+                function showLoseModal() {
+                    var loseModal = document.getElementById('loseModal');
+                    loseModal.style.display = 'block';
+                }
+                
+                function closeLoseModal() {
+                    var loseModal = document.getElementById('loseModal');
+                    loseModal.style.display = 'none';
+                    document.querySelector(".container").style.display = "none";
+                    document.getElementById("question").style.display = "none";
+                    document.getElementById("answer").style.display = "none";
 
+                }
+        
+                function playAgain(){
+                    document.getElementById("loseModal").style.display = "none";
+                    resetGame();
+                }
+        
                 //TOAST
                 function showToast(message, colorClass, shake=false) {
                     const toast = document.getElementById("toast");
@@ -112,6 +138,3 @@ var ans="";
                         }
                     }, 3000);
                 }
-
-            });
-        });

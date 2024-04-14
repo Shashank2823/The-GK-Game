@@ -47,17 +47,30 @@
         <div class="cube">Y</div>
         <div class="cube">Z</div>   
     </div>
+    <div id="score">SCORE :  0</div>
+    <div id="life">LIFE :  3</div>
     </div>
-    <div id="score">SCORE : 0</div>
-    <div id="life">LIFE : 3</div>
+    
     <button id="next">NEXT</button>
+    <!-- winning modal -->
     <div id="congratsModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" onclick="closeWinModal()">&times;</span>
             <p>Congratulations! You've won the game!</p>
             <button id="playAgain">Play Again</button>
         </div>
     </div>
+
+    <!-- Losing Modal -->
+    <div id="loseModal" class="modal2">
+        <div class="modal-content2">
+        <span class="close" onclick="closeLoseModal()">&times;</span>
+        <h1>Oops, You Lose!</h1>
+        <p>Sorry, you've run out of lives.</p>
+        <button onclick="playAgain()">Try Again?</button>
+        </div>
+    </div>
+  
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.5/dist/confetti.min.js"></script>
     <script src="/script.js"></script>
