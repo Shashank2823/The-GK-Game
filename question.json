@@ -1,18 +1,380 @@
-[
+ [
     {
-        "question": "What is the capital of France?",
-        "answer": "Paris"
+    "question": "What is the capital of France?",
+    "answer": "Paris"
     },
     {
-        "question": "What is the largest mammal?",
-        "answer": "Blue Whale"
+    "question": "Which gas do plants absorb from the atmosphere?",
+    "answer": "Carbon dioxide"
     },
     {
-        "question": "What is the chemical symbol for water?",
-        "answer": "H2O"
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "answer": "Shakespeare"
     },
     {
-        "question": "What is the tallest mountain in the world?",
-        "answer": "Mount Everest"
+    "question": "What is the chemical symbol for water?",
+    "answer": "H2O"
+    },
+    {
+    "question": "What is the largest ocean on Earth?",
+    "answer": "Pacific"
+    },
+    {
+    "question": "What is the study of fossils called?",
+    "answer": "Paleontology"
+    },
+    {
+    "question": "Who painted the Mona Lisa?",
+    "answer": "Da Vinci"
+    },
+    {
+    "question": "What is the largest planet in our solar system?",
+    "answer": "Jupiter"
+    },
+    {
+    "question": "What is the capital of Japan?",
+    "answer": "Tokyo"
+    },
+    {
+    "question": "What is the currency of China?",
+    "answer": "Yuan"
+    },
+    {
+    "question": "Who discovered penicillin?",
+    "answer": "Fleming"
+    },
+    {
+    "question": "What is the boiling point of water in Celsius?",
+    "answer": "100"
+    },
+    {
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "answer": "Lee"
+    },
+    {
+    "question": "What is the chemical symbol for gold?",
+    "answer": "Au"
+    },
+    {
+    "question": "What is the tallest mammal?",
+    "answer": "Giraffe"
+    },
+    {
+    "question": "What is the largest desert in the world?",
+    "answer": "Sahara"
+    },
+    {
+    "question": "What is the powerhouse of the cell?",
+    "answer": "Mitochondria"
+    },
+    {
+    "question": "Who developed the theory of relativity?",
+    "answer": "Einstein"
+    },
+    {
+    "question": "What is the chemical symbol for oxygen?",
+    "answer": "O"
+    },
+    {
+    "question": "What is the smallest country in the world?",
+    "answer": "Vatican"
+    },
+    {
+    "question": "Who wrote 'The Great Gatsby'?",
+    "answer": "Fitzgerald"
+    },
+    {
+    "question": "What is the chemical symbol for iron?",
+    "answer": "Fe"
+    },
+    {
+    "question": "What is the fastest land animal?",
+    "answer": "Cheetah"
+    },
+    {
+    "question": "What is the capital of India?",
+    "answer": "New Delhi"
+    },
+    {
+    "question": "What is the chemical symbol for sodium?",
+    "answer": "Na"
+    },
+    {
+    "question": "Who painted 'The Starry Night'?",
+    "answer": "Van Gogh"
+    },
+    {
+    "question": "What is the largest organ in the human body?",
+    "answer": "Skin"
+    },
+    {
+    "question": "Who was the first man to walk on the moon?",
+    "answer": "Armstrong"
+    },
+    {
+    "question": "What is the chemical symbol for silver?",
+    "answer": "Ag"
+    },
+    {
+    "question": "What is the capital of Brazil?",
+    "answer": "Brasília"
+    },
+    {
+    "question": "What is the chemical symbol for carbon?",
+    "answer": "C"
+    },
+    {
+    "question": "Who wrote '1984'?",
+    "answer": "Orwell"
+    },
+    {
+    "question": "What is the chemical symbol for helium?",
+    "answer": "He"
+    },
+    {
+    "question": "What is the largest bird in the world?",
+    "answer": "Ostrich"
+    },
+    {
+    "question": "What is the largest bone in the human body?",
+    "answer": "Femur"
+    },
+    {
+    "question": "Who composed 'The Four Seasons'?",
+    "answer": "Vivaldi"
+    },
+    {
+    "question": "What is the chemical symbol for potassium?",
+    "answer": "K"
+    },
+    {
+    "question": "What is the hardest natural substance on Earth?",
+    "answer": "Diamond"
+    },
+    {
+    "question": "Who discovered gravity?",
+    "answer": "Newton"
+    },
+    {
+    "question": "What is the chemical symbol for copper?",
+    "answer": "Cu"
+    },
+    {
+    "question": "What is the largest lizard?",
+    "answer": "Komodo dragon"
+    },
+    {
+    "question": "Who wrote 'Pride and Prejudice'?",
+    "answer": "Austen"
+    },
+    {
+    "question": "What is the chemical symbol for nitrogen?",
+    "answer": "N"
+    },
+    {
+    "question": "What is the largest planet in the solar system?",
+    "answer": "Jupiter"
+    },
+    {
+    "question": "What is the chemical symbol for calcium?",
+    "answer": "Ca"
+    },
+    {
+    "question": "What is the fastest bird?",
+    "answer": "Peregrine falcon"
+    },
+    {
+    "question": "Who painted 'The Last Supper'?",
+    "answer": "Da Vinci"
+    },
+    {
+    "question": "What is the chemical symbol for lead?",
+    "answer": "Pb"
+    },
+    {
+    "question": "What is the largest animal in the world?",
+    "answer": "Blue whale"
+    },
+    {
+    "question": "What is the chemical symbol for sulfur?",
+    "answer": "S"
+    },
+    {
+    "question": "Who wrote 'War and Peace'?",
+    "answer": "Tolstoy"
+    },
+    {
+    "question": "What is the chemical symbol for magnesium?",
+    "answer": "Mg"
+    },
+    {
+    "question": "What is the fastest fish?",
+    "answer": "Sailfish"
+    },
+    {
+    "question": "Who painted 'The Scream'?",
+    "answer": "Munch"
+    },
+    {
+    "question": "What is the chemical symbol for tin?",
+    "answer": "Sn"
+    },
+    {
+    "question": "What is the longest river in the world?",
+    "answer": "Nile"
+    },
+    {
+    "question": "What is the chemical symbol for mercury?",
+    "answer": "Hg"
+    },
+    {
+    "question": "Who wrote 'The Catcher in the Rye'?",
+    "answer": "Salinger"
+    },
+    {
+    "question": "What is the chemical symbol for uranium?",
+    "answer": "U"
+    },
+    {
+    "question": "What is the largest flower in the world?",
+    "answer": "Rafflesia"
+    },
+    {
+    "question": "What is the chemical symbol for phosphorus?",
+    "answer": "P"
+    },
+    {
+    "question": "Who wrote 'Les Misérables'?",
+    "answer": "Hugo"
+    },
+    {
+    "question": "What is the chemical symbol for aluminum?",
+    "answer": "Al"
+    },
+    {
+    "question": "What is the fastest flying insect?",
+    "answer": "Dragonfly"
+    },
+    {
+    "question": "Who wrote 'Don Quixote'?",
+    "answer": "Cervantes"
+    },
+    {
+    "question": "What is the chemical symbol for nickel?",
+    "answer": "Ni"
+    },
+    {
+    "question": "What is the largest reptile?",
+    "answer": "Saltwater crocodile"
+    },
+    {
+    "question": "What is the chemical symbol for manganese?",
+    "answer": "Mn"
+    },
+    {
+    "question": "Who wrote 'A Tale of Two Cities'?",
+    "answer": "Dickens"
+    },
+    {
+    "question": "What is the chemical symbol for zinc?",
+    "answer": "Zn"
+    },
+    {
+    "question": "What is the fastest land vehicle?",
+    "answer": "ThrustSSC"
+    },
+    {
+    "question": "Who painted 'Girl with a Pearl Earring'?",
+    "answer": "Vermeer"
+    },
+    {
+    "question": "What is the chemical symbol for chromium?",
+    "answer": "Cr"
+    },
+    {
+    "question": "What is the largest island?",
+    "answer": "Greenland"
+    },
+    {
+    "question": "What is the chemical symbol for iodine?",
+    "answer": "I"
+    },
+    {
+    "question": "Who wrote 'Brave New World'?",
+    "answer": "Huxley"
+    },
+    {
+    "question": "What is the chemical symbol for arsenic?",
+    "answer": "As"
+    },
+    {
+    "question": "What is the tallest tree species?",
+    "answer": "Redwood"
+    },
+    {
+    "question": "What is the chemical symbol for barium?",
+    "answer": "Ba"
+    },
+    {
+    "question": "Who painted 'Guernica'?",
+    "answer": "Picasso"
+    },
+    {
+    "question": "What is the chemical symbol for cobalt?",
+    "answer": "Co"
+    },
+    {
+    "question": "What is the longest bone in the human body?",
+    "answer": "Femur"
+    },
+    {
+    "question": "What is the chemical symbol for lithium?",
+    "answer": "Li"
+    },
+    {
+    "question": "Who wrote 'Moby-Dick'?",
+    "answer": "Melville"
+    },
+    {
+    "question": "What is the chemical symbol for molybdenum?",
+    "answer": "Mo"
+    },
+    {
+    "question": "What is the tallest building in the world?",
+    "answer": "Burj Khalifa"
+    },
+    {
+    "question": "What is the chemical symbol for bismuth?",
+    "answer": "Bi"
+    },
+    {
+    "question": "Who wrote 'The Odyssey'?",
+    "answer": "Homer"
+    },
+    {
+    "question": "What is the chemical symbol for tungsten?",
+    "answer": "W"
+    },
+    {
+    "question": "What is the deepest ocean?",
+    "answer": "Pacific"
+    },
+    {
+    "question": "What is the chemical symbol for vanadium?",
+    "answer": "V"
+    },
+    {
+    "question": "Who wrote 'Anna Karenina'?",
+    "answer": "Tolstoy"
+    },
+    {
+    "question": "What is the chemical symbol for platinum?",
+    "answer": "Pt"
+    },
+    {
+    "question": "What is the largest living bird?",
+    "answer": "Ostrich"
     }
 ]
+
+  
