@@ -67,7 +67,7 @@ var ans="";
                 if (updatedAnswer.length === ans.length && updatedAnswer.join('').toUpperCase() === ans.toUpperCase()) { 
                     count++; 
                     document.getElementById("score").innerText = `SCORE : ${count}`;
-                    if (count == 5) {
+                    if (count ==5) {
                         checkWinCondition();
                     } else {
                         showToast("Correct answer! Next question!", 'green');
@@ -93,7 +93,7 @@ var ans="";
                 }
 
                 function checkWinCondition() {
-                    if (count == 5) {
+                    if (count ==5) {
                         testConfetti();
                         document.getElementById("congratsModal").style.display = "block";
                     }
